@@ -4,7 +4,7 @@
   "updateLinks": true,
   "deleteEmptyFolders": true,
   "deleteExistFilesWhenMoveNote": true,
-  "changeNoteBacklinksAlt": false,
+  "changeNoteBacklinksAlt": true,
   "ignoreFolders": [
     ".git/",
     ".obsidian/"

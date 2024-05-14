@@ -179,6 +179,6 @@ Puis nous allons configurer notre machine :
 - Puis nous allons aussi lui donner la clé ssh créer précédemment. Pour ce faire cliquez sur la clé précédemment créer
 C'est tout pour le paramétrage vous pouvez déjà cliquez sur lancé l'instance
 
-### La machine serveur étant créer il faut maintenant si connecter
+### La machine serveur étant créer il faut maintenant si connecters
 
 
