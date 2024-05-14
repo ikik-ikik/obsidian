@@ -156,7 +156,9 @@ nous allons créer une règle SSH :
 
 Et voilà votre groupe de sécurité est créer et configurer
 
-### Ensuit il vas nous falloir créer un paire de clé ssh pour ce connecter a la machine. Pour ce faire il faut cliquer sur :
+### Ensuit il vas nous falloir créer un paire de clé ssh pour ce connecter a la machine. 
+
+Pour ce faire il faut cliquer sur :
 
 ![_attachments/Pasted image 20240509132813.png](_attachments/Pasted%20image%2020240509132813.png)
 
