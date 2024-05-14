@@ -131,7 +131,7 @@ Aller sur le projet OpenStack de votre choit et connectez vous avec votre compte
 
 Puis nous allons créer un groupe sécurité pour gérer l'ouverture des port de notre serveur Mattermost
 
-![attachments/Pasted image 20240509130313.png](Mattermost_openstack_infomaniak/_attachments/Pasted%20image%2020240509130313.png)
+![attachments/Pasted image 20240509130313.png](_attachments/Pasted%20image%2020240509130313.png)
 
 Puis cliquez sur :
 ![Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509131303.png](Mattermost_openstack_infomaniak/_attachments/Pasted%20image%2020240509131303.png)
@@ -180,6 +180,6 @@ Puis nous allons configurer notre machine :
 - Puis nous allons aussi lui donner la clé ssh créer précédemment. Pour ce faire cliquez sur la clé précédemment créer
 C'est tout pour le paramétrage vous pouvez déjà cliquez sur lancé l'instance
 
-### La machine serveur étant créer il faut maintenant si connectersss
+### La machine serveur étant créer il faut maintenant si connecterssss
 
 
