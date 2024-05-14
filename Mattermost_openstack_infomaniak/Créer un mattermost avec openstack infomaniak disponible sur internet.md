@@ -170,8 +170,9 @@ Puis nous allons configurer notre machine :
 
 - Donner luis le nom que vous souhaitez et cliquer sur suivant
 - Nous avons déjà choisi l'image donc nous pouvons aussi cliquer sur suivant
-- Puis choisissez la taille du serveur. Pour être tranquille je vais opter pour :
-![[_attachments/Pasted image 20240511194822.png]]
+- Puis choisissez la taille du serveur. Pour être tranquille je vais opter pour 
+![_attachments/Pasted image 20240511194822.png](_attachments/Pasted%20image%2020240511194822.png)
+
 - Puis cliquez sur suivant
 - Puis cliquez sur ext-net1 pour que la machine est une IPv4 publique et cliquez sur suivant
 - Cliquez encore une fois sur suivant
