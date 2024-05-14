@@ -140,12 +140,15 @@ Puis cliquez sur :
 Nommez le ensuit comme vous voulez et cliquez sur créer un groupe de sécurité
 
 Et voila le croupe est créer il faut ensuit créer les règle qui vont nous intéresser. Pour ceci nous allons cliquez ensuit sur :
+
 ![_attachments/Pasted image 20240509132014.png](_attachments/Pasted%20image%2020240509132014.png)
 
 nous allons créer une règle SSH :
+
  ![_attachments/Pasted image 20240509132138.png](_attachments/Pasted%20image%2020240509132138.png)
  
  Nous allons aussi créer un règle http et https :
+ 
  ![_attachments/Pasted image 20240509132306.png](_attachments/Pasted%20image%2020240509132306.png)
 
 
@@ -158,9 +161,11 @@ Et voilà votre groupe de sécurité est créer et configurer
 ![_attachments/Pasted image 20240509132813.png](_attachments/Pasted%20image%2020240509132813.png)
 
 Puis cliquer sur :
+
 ![_attachments/Pasted image 20240511192916.png](_attachments/Pasted%20image%2020240511192916.png)
 
 Nommer la comme vous le souhaitez et sélectionner "Clé SSH" puis cliquez sur  Créer une paire de clés : 
+
 ![_attachments/Pasted image 20240511193613.png](_attachments/Pasted%20image%2020240511193613.png)
 
 Un fichier seras ensuit télécharger garder le bien précieusement car c'est grasse a ce fichier que nous allons pouvoir nous connecter a la machine que nous allons dessuit créer
@@ -168,9 +173,11 @@ Un fichier seras ensuit télécharger garder le bien précieusement car c'est gr
 ### Créer la machine serveur Mattermost
 
 Nous allons choisir une image Ubuntu 22.04 pour créer notre serveur. Pour ce faire rendez vous sur "Images" : 
+
 ![_attachments/Pasted image 20240511194026.png](_attachments/Pasted%20image%2020240511194026.png)
 
 Puis naviguez jusqu'à trouver l'image qui nous intéresse soit :
+
 ![_attachments/Pasted image 20240511194257.png](_attachments/Pasted%20image%2020240511194257.png)
  Cliquez sur "Démarrer"
 
@@ -179,6 +186,7 @@ Puis nous allons configurer notre machine :
 - Donner luis le nom que vous souhaitez et cliquer sur suivant
 - Nous avons déjà choisi l'image donc nous pouvons aussi cliquer sur suivant
 - Puis choisissez la taille du serveur. Pour être tranquille je vais opter pour :
+
 ![_attachments/Pasted image 20240511194822.png](_attachments/Pasted%20image%2020240511194822.png)
 
 - Puis cliquez sur suivant
