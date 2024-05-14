@@ -131,39 +131,39 @@ Aller sur le projet OpenStack de votre choit et connectez vous avec votre compte
 
 Puis nous allons créer un groupe sécurité pour gérer l'ouverture des port de notre serveur Mattermost
 
-![[Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509130313.png]]
+![Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509130313.png](Mattermost_openstack_infomaniak/_attachments/Pasted%20image%2020240509130313.png)
 
 Puis cliquez sur :
-![[Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509131303.png]]
+![Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509131303.png](Mattermost_openstack_infomaniak/_attachments/Pasted%20image%2020240509131303.png)
 
 Nommez le ensuit comme vous voulez et cliquez sur créer un groupe de sécurité
 
 Et voila le croupe est créer il faut ensuit créer les règle qui vont nous intéresser. Pour ceci nous allons cliquez ensuit sur :
-![[Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509132014.png]]
+![Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509132014.png](Mattermost_openstack_infomaniak/_attachments/Pasted%20image%2020240509132014.png)
  nous allons créer une règle SSH :
- ![[Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509132138.png]]
+ ![Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509132138.png](Mattermost_openstack_infomaniak/_attachments/Pasted%20image%2020240509132138.png)
  Nous allons aussi créer un règle http et https :
- ![[Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509132306.png]]
- ![[Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509132409.png]]
+ ![Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509132306.png](Mattermost_openstack_infomaniak/_attachments/Pasted%20image%2020240509132306.png)
+ ![Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509132409.png](Mattermost_openstack_infomaniak/_attachments/Pasted%20image%2020240509132409.png)
 
 Et voilà votre groupe de sécurité est créer et configurer
 
 ### Ensuit il vas nous falloir créer un paire de clé ssh pour ce connecter a la machine. Pour ce faire il faut cliquer sur :
 
-![[Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509132813.png]]
+![Mattermost_openstack_infomaniak/_attachments/Pasted image 20240509132813.png](Mattermost_openstack_infomaniak/_attachments/Pasted%20image%2020240509132813.png)
 Puis cliquer sur :
-![[Mattermost_openstack_infomaniak/_attachments/Pasted image 20240511192916.png]]
+![Mattermost_openstack_infomaniak/_attachments/Pasted image 20240511192916.png](Mattermost_openstack_infomaniak/_attachments/Pasted%20image%2020240511192916.png)
 Nommer la comme vous le souhaitez et sélectionner "Clé SSH" puis cliquez sur  Créer une paire de clés : 
-![[Mattermost_openstack_infomaniak/_attachments/Pasted image 20240511193613.png]]
+![Mattermost_openstack_infomaniak/_attachments/Pasted image 20240511193613.png](Mattermost_openstack_infomaniak/_attachments/Pasted%20image%2020240511193613.png)
 
 Un fichier seras ensuit télécharger garder le bien précieusement car c'est grasse a ce fichier que nous allons pouvoir nous connecter a la machine que nous allons dessuit créer
 
 ### Créer la machine serveur Mattermost
 
 Nous allons choisir une image Ubuntu 22.04 pour créer notre serveur. Pour ce faire rendez vous sur "Images" : 
-![[Mattermost_openstack_infomaniak/_attachments/Pasted image 20240511194026.png]]
+![Mattermost_openstack_infomaniak/_attachments/Pasted image 20240511194026.png](Mattermost_openstack_infomaniak/_attachments/Pasted%20image%2020240511194026.png)
 Puis naviguez jusqu'à trouver l'image qui nous intéresse soit :
-![[Mattermost_openstack_infomaniak/_attachments/Pasted image 20240511194257.png]]
+![Mattermost_openstack_infomaniak/_attachments/Pasted image 20240511194257.png](Mattermost_openstack_infomaniak/_attachments/Pasted%20image%2020240511194257.png)
  Cliquez sur "Démarrer"
 
 Puis nous allons configurer notre machine :
