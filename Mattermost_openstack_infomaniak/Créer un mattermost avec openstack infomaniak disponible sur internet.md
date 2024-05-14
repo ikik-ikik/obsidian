@@ -200,4 +200,76 @@ C'est tout pour le paramétrage vous pouvez déjà cliquez sur lancé l'instance
 
 ### La machine serveur étant créer il faut maintenant si connecter
 
+Il vas falloir trouver l'ip de la machine. Pour ce faire aller dans l'onglet instance et cliquer sur le nom de la machine que vous venez de créer :
 
+![_attachments/Pasted image 20240514193336.png](_attachments/Pasted%20image%2020240514193336.png)
+
+Vous trouverez l'ip ici : 
+
+![_attachments/Pasted image 20240514193500.png](_attachments/Pasted%20image%2020240514193500.png)
+
+Aller ensuit dans mobax sur l'onglet session :
+
+![_attachments/Pasted image 20240514193642.png](_attachments/Pasted%20image%2020240514193642.png)
+
+Aller ensuit dans ssh et remplissez les information suivant : 
+
+![_attachments/Pasted image 20240514194008.png](_attachments/Pasted%20image%2020240514194008.png)
+
+- 1 : Mettez l'ip de la machine
+- 2 : Cliquer sur **Advanced SSH settings** 
+- Cliquer ensuit sur **Use private key** 
+- Puis cliquez sur la petite icon de fichier ce qui ouvrira l'explorateur et sélectionnez le fichier télécharger laure de la création de la paire de clé SSH (je vous avez bien dit de garder ce fichier précieusement ;) )
+- Pour finir cliquez sur ok
+
+Sur l'écran suivant cliquez sur accepter :
+
+![_attachments/Pasted image 20240514194650.png](_attachments/Pasted%20image%2020240514194650.png)
+
+Quand on vous demanderas de vous connecter avec un utilisateur écrivez ubuntu :
+
+![_attachments/Pasted image 20240514194810.png](_attachments/Pasted%20image%2020240514194810.png)
+
+Cliquez sur enter
+
+Et voilà vous êtes connecté au serveur mais pour finir il faut 
+### changer les mots de passe
+
+exécuter les commandes suivant dans le terminal 
+
+```bash
+sudo su
+```
+
+```bash
+passwd
+```
+ 
+pour mettre un mot de passe a l'utilisateur root
+
+saisirez 2 fois le mot de passe de votre choit (sécurité avant tout)
+
+
+```bash
+passwd -d ubuntu
+```
+
+pour supprimer le mot de passe de l'utilisateur Ubuntu
+
+```bash
+exit
+```
+
+pour revenir a l'utilisateur Ubuntu
+
+```bash
+passwd
+```
+
+pour mettre un mot de passe a l'utilisateur Ubuntu
+
+saisirez 2 fois le mot de passe de votre choit (sécurité avant tout)
+
+Et voilà la machine est prête pour l'installation du serveur Mattermost
+
+# Installation du Serveur Mattermost
