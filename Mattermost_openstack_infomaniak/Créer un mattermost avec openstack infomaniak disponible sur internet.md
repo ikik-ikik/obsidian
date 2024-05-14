@@ -171,7 +171,7 @@ Puis nous allons configurer notre machine :
 - Donner luis le nom que vous souhaitez et cliquer sur suivant
 - Nous avons déjà choisi l'image donc nous pouvons aussi cliquer sur suivant
 - Puis choisissez la taille du serveur. Pour être tranquille je vais opter pour :
-![[Mattermost_openstack_infomaniak/_attachments/Pasted image 20240511194822.png]]
+![[_attachments/Pasted image 20240511194822.png]]
 - Puis cliquez sur suivant
 - Puis cliquez sur ext-net1 pour que la machine est une IPv4 publique et cliquez sur suivant
 - Cliquez encore une fois sur suivant
@@ -179,6 +179,6 @@ Puis nous allons configurer notre machine :
 - Puis nous allons aussi lui donner la clé ssh créer précédemment. Pour ce faire cliquez sur la clé précédemment créer
 C'est tout pour le paramétrage vous pouvez déjà cliquez sur lancé l'instance
 
-### La machine serveur étant créer il faut maintenant si connecters
+### La machine serveur étant créer il faut maintenant si connecterss
 
 
