@@ -273,3 +273,154 @@ saisirez 2 fois le mot de passe de votre choit (sécurité avant tout)
 Et voilà la machine est prête pour l'installation du serveur Mattermost
 
 # Installation du Serveur Mattermost
+doc : https://docs.mattermost.com/install/install-ubuntu.html
+
+### Ajouter le référentiel PPA du serveur Mattermost
+
+Fait les commande suivant :
+```bash
+sudo rm /usr/share/keyrings/mattermost-archive-keyring.gpg
+```
+
+```bash
+curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg |  gpg --dearmor | sudo tee /usr/share/keyrings/mattermost-archive-keyring.gpg > /dev/null
+```
+
+
+Dans une fenêtre de terminal, exécutez la commande de configuration du référentiel suivante pour ajouter les référentiels Mattermost Server :
+
+```bash
+curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash -s mattermost
+```
+
+### Installer
+
+Avant d'installer le serveur Mattermost, il est recommandé de mettre à jour tous vos référentiels et, si nécessaire, de mettre à jour les packages existants en exécutant la commande suivante :
+
+```bash
+sudo apt update
+```
+
+```bash
+sudo apt install mattermost -y
+```
+
+Vous disposez désormais de la dernière version de Mattermost Server installée sur votre système.
+
+Le chemin d'installation est `/opt/mattermost`. Le package aura ajouté un utilisateur et un groupe nommés `mattermost`. Le fichier d'unité systemd requis a également été créé mais ne sera pas défini comme actif.
+
+Avant de procéder à l'installation nous allons mettre en place la bas de données PostgreSQL et la configurer 
+
+### Mise en place la base de données PostgreSQL 
+doc : https://docs.mattermost.com/install/prepare-mattermost-database.html
+
+Nous allons déjà commencer a installer PostgreSQL
+
+```bash
+sudo apt install postgresql
+```
+
+Do you want to continue? [Y/n] Y
+
+Puis nous allons créer et configurer la base de données
+
+Pour configurer une base de données PostgreSQL à utiliser par le serveur Mattermost :
+
+1. Connectez-vous au serveur qui hébergera la base de données et installez PostgreSQL. Consultez la documentation [PostgreSQL](https://www.postgresql.org/download/) pour plus de détails. Une fois l'installation terminée, le serveur PostgreSQL est en cours d'exécution et un compte utilisateur Linux appelé _postgres_ a été créé.
+    
+2. Accédez à PostgreSQL en exécutant :
+
+```bash
+sudo -u postgres psql
+```
+
+3. Créez la base de données Mattermost en exécutant :
+
+```
+postgres=# CREATE DATABASE mattermost;
+```
+
+4. Créez l'utilisateur Mattermost _mmuser_ en exécutant la commande suivante. Assurez-vous d'utiliser un mot de passe plus sécurisé que `Super2024!`.
+
+```
+postgres=# CREATE USER mmuser WITH PASSWORD 'Super2024!';
+```
+
+5. Accordez à l'utilisateur l'accès à la base de données Mattermost en exécutant :
+
+```
+postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;
+```
+
+6. Autorisez l'utilisateur à changer le propriétaire d'une base de données en utilisateur `mmuser`en exécutant :
+
+```
+\c mattermost
+```
+
+```
+ALTER DATABASE mattermost OWNER TO mmuser;
+```
+
+7. Accordez l'accès aux objets contenus dans le schéma spécifié en exécutant :
+
+```
+GRANT USAGE, CREATE ON SCHEMA PUBLIC TO mmuser;
+```
+
+8. Quittez le terminal interactif PostgreSQL en exécutant :
+
+```
+\q
+```
+
+Ces connexions hôtes sont spécifiques à Ubuntu 20.04 et diffèrent selon la version du système d'exploitation que vous utilisez. Par exemple, dans Ubuntu 22.04, les `peer`types de connexion sont répertoriés à `sha-256`la place.
+
+**Base de données locale (même serveur)**
+
+Si le serveur Mattermost et la base de données sont sur la même machine :
+
+1. Ouvrir `/etc/postgresql/{version}/main/pg_hba.conf`en tant que _root_ dans un éditeur de texte (remplacer {version} par le numéro de version de PostgreSQL que vous avez installé) Pour ma par :
+```bash
+sudo nano /etc/postgresql/14/main/pg_hba.conf
+```
+    
+2. Recherchez les lignes suivantes :
+    
+
+> `local   all             all                        peer`
+> 
+> `host    all             all         ::1/128        ident`
+
+3. Changer `peer`et `ident`pour `trust`:
+    
+
+> `local   all             all                        trust`
+> 
+> `host    all             all         ::1/128        trust`
+
+![_attachments/Pasted image 20240516194936.png](_attachments/Pasted%20image%2020240516194936.png)
+
+Et voila la base de données est configuré
+
+maintenant il faut démarrer PostgreSQL : 
+
+```bash
+sudo systemctl restart postgresql
+```
+### Installation
+doc : https://docs.mattermost.com/install/install-ubuntu.html#setup
+
+Avant de démarrer le serveur Mattermost, vous devez modifier le fichier de configuration. Un exemple de fichier de configuration se trouve à l'adresse `/opt/mattermost/config/config.defaults.json`.
+
+Renommez ce fichier de configuration avec les autorisations correctes :
+
+```bash
+sudo install -C -m 600 -o mattermost -g mattermost /opt/mattermost/config/config.defaults.json /opt/mattermost/config/config.json
+```
+
+et nous allons commencer a configurer ce qu'il faut dans le fichier de config. Pour ce faire :
+
+```bash
+sudo nano /opt/mattermost/config/config.json
+```
