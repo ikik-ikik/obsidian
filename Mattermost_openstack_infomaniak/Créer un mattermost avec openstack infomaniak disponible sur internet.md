@@ -28,19 +28,19 @@
 # Installation de mobax
 ### Installation de mobax dans Windows
 
-Il vous suffit de télécharger l'exécutable suivant : https://mobaxterm.mobatek.net/download-home-edition.html
+Veuillez télécharger l'exécutable à partir du lien suivant : https://mobaxterm.mobatek.net/download-home-edition.html
 
-Et de laisser l'installation par défaut
+Ensuite, laissez les paramètres d'installation par défaut.
 
 ### Installation de mobax dans linux 22.04
 
-Pour ubuntu nous allons suivre la documentation suivant : https://download.mobatek.net/mobaxterm-on-linux.html 
+Pour Ubuntu, nous allons suivre la documentation suivante : https://download.mobatek.net/mobaxterm-on-linux.html 
 
-Nous allons commencer par installer wine ce qui nous permettra d'exécuter des programme qui tourne sous Windows : https://wiki.winehq.org/Ubuntu
+Nous allons commencer par installer Wine, ce qui nous permettra d'exécuter des programmes conçus pour Windows. https://wiki.winehq.org/Ubuntu
 
-Ouvrir le terminal de ubuntu
+Ouvrez le terminal d'Ubuntu.
 
-mettez a jour ubuntu :
+Mettez à jour Ubuntu en exécutant la commande suivante dans le terminal :
 ```bash
 sudo apt update
 ```
@@ -53,8 +53,10 @@ sudo apt upgrade
 sudo reboot
 ```
 
-Installation de wine : 
-Téléchargez et ajoutez la clé du référentiel :
+  
+Pour installer Wine, suivez les étapes suivantes :
+
+1. Téléchargez et ajoutez la clé du référentiel en exécutant la commande suivante dans le terminal :
 
 ```bash
 sudo mkdir -pm755 /etc/apt/keyrings
@@ -72,21 +74,22 @@ sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/
 sudo apt install -y wine-stable  
 ```
 
-Puis télécharger mobax sur votre machine Ubuntu : https://mobaxterm.mobatek.net/download-home-edition.html (Il faut prendre "Portable edition")
+  
+Téléchargez Mobax sur votre machine Ubuntu en exécutant la commande suivante dans le terminal : https://mobaxterm.mobatek.net/download-home-edition.html (Il faut prendre "Portable edition")
 
-Maintenant aller dans fils puis dans téléchargement et décompresser le zip précédemment télécharger
+Accédez au dossier 'Téléchargements', puis extrayez le fichier zip précédemment téléchargé.
 
-cliquez ensuite sur les trois petit point en haut de la fenêtre et cliquez sur open in terminal
+  
+Ensuite, cliquez sur les trois petits points situés en haut de la fenêtre, puis sélectionnez "Open in Terminal".
 
-Exécuter ensuit le commande suivantes :
+Ensuite, exécutez les commandes suivantes :
 
 ```bash
 wine MobaXterm_version_24.1.exe
 ```
- Changer les numéro de version si besoin
- Puis mobax s'ouvre :)
+ Changez les numéros de version si nécessaire, puis Mobax s'ouvrira :)
 
-- Si vous avez un message d'erreur indiquant que vous avez besoin du package "wine32" ou du package "wine:i386", veuillez suivre les instructions afin de l'installer.
+- Si vous recevez un message d'erreur indiquant que vous avez besoin du package "wine32" ou du package "wine:i386", veuillez suivre les instructions pour l'installer.
 
 ```bash
 sudo su
@@ -105,31 +108,32 @@ wine MobaXterm_version_24.1.exe
 ```
 
 
-Ce qu'il y a à savoir sur cet version :
+  
+Voici ce qu'il y a à savoir sur cette version :
 
 Il s'agit d'une première version de MobaXterm compatible Wine, elle est limitée et n'a pas été testée de manière approfondie, vous pouvez donc vous attendre à des résultats différents en fonction des paramètres de votre distribution. Cependant, nous l'avons jugé suffisamment utile pour le partager avec vous, même s'il nous reste encore du travail à faire pour l'améliorer. Nous espérons que vous l'apprécierez !
 
-source : https://download.mobatek.net/mobaxterm-on-linux.html
+Source : https://download.mobatek.net/mobaxterm-on-linux.html
 
-pour exécuter mobax il vous suffît d'exécuter la commande suivant dans le dossier ou ce trouve l'exécutable
+Pour exécuter Mobax, il vous suffit d'exécuter la commande suivante dans le dossier où se trouve l'exécutable :
 
 ```bash
 wine MobaXterm_version_24.1.exe
 ```
 
-Et voila pour mobax
+Parfait, Mobax est maintenant configuré sur votre système !
 
-je vous conseille quand même de passer par Windows :)
+Je vous conseille quand même de passer par Windows :)
 
 
 
 
 # Création de la Vm Serveur Ubuntu sur OpenStack
 
-Aller sur le projet OpenStack de votre choit et connectez vous avec votre compte
+Allez sur le projet OpenStack de votre choix, puis connectez-vous avec votre compte.
 
 
-Puis nous allons créer un groupe sécurité pour gérer l'ouverture des port de notre serveur Mattermost
+Ensuite, nous allons créer un groupe de sécurité pour gérer l'ouverture des ports de notre serveur Mattermost.
 
 ![attachments/Pasted image 20240509130313.png](_attachments/Pasted%20image%2020240509130313.png)
 
@@ -137,105 +141,106 @@ Puis cliquez sur :
 
 ![attachments/Pasted image 20240509131303.png](_attachments/Pasted%20image%2020240509131303.png)
 
-Nommez le ensuit comme vous voulez et cliquez sur créer un groupe de sécurité
+Nommez-le ensuite comme vous le souhaitez, puis cliquez sur "Créer un groupe de sécurité".
 
-Et voila le croupe est créer il faut ensuit créer les règle qui vont nous intéresser. Pour ceci nous allons cliquez ensuit sur :
+Et voilà, le groupe est créé. Ensuite, nous devons créer les règles qui nous intéressent. Pour cela, cliquez ensuite sur :
 
 ![_attachments/Pasted image 20240509132014.png](_attachments/Pasted%20image%2020240509132014.png)
 
-nous allons créer une règle SSH :
+Nous allons créer une règle SSH :
 
  ![_attachments/Pasted image 20240509132138.png](_attachments/Pasted%20image%2020240509132138.png)
  
- Nous allons aussi créer un règle http et https :
+ Nous allons également créer une règle pour HTTP et HTTPS :
  
  ![_attachments/Pasted image 20240509132306.png](_attachments/Pasted%20image%2020240509132306.png)
 
 
  ![_attachments/Pasted image 20240509132409.png](_attachments/Pasted%20image%2020240509132409.png)
 
-Et voilà votre groupe de sécurité est créer et configurer
+ Et voilà, votre groupe de sécurité est créé et configuré !
 
-### Ensuit il vas nous falloir créer un paire de clé ssh pour ce connecter a la machine. 
+### Ensuite, il nous faudra créer une paire de clés SSH pour se connecter à la machine. 
 
-Pour ce faire il faut cliquer sur :
+Pour ce faire, cliquez sur :
 
 ![_attachments/Pasted image 20240509132813.png](_attachments/Pasted%20image%2020240509132813.png)
 
-Puis cliquer sur :
+Ensuite, cliquez sur :
 
 ![_attachments/Pasted image 20240511192916.png](_attachments/Pasted%20image%2020240511192916.png)
 
-Nommer la comme vous le souhaitez et sélectionner "Clé SSH" puis cliquez sur  Créer une paire de clés : 
+Nommez-la comme vous le souhaitez, sélectionnez "Clé SSH", puis cliquez sur "Créer une paire de clés" :
 
 ![_attachments/Pasted image 20240511193613.png](_attachments/Pasted%20image%2020240511193613.png)
 
-Un fichier seras ensuit télécharger garder le bien précieusement car c'est grasse a ce fichier que nous allons pouvoir nous connecter a la machine que nous allons dessuit créer
+Un fichier sera ensuite téléchargé. Gardez-le bien précieusement, car c'est grâce à ce fichier que nous pourrons nous connecter à la machine que nous allons ensuite créer.
 
 ### Créer la machine serveur Mattermost
 
-Nous allons choisir une image Ubuntu 22.04 pour créer notre serveur. Pour ce faire rendez vous sur "Images" : 
+Nous allons choisir une image Ubuntu 22.04 pour créer notre serveur. Pour ce faire, rendez-vous sur "Images" :
 
 ![_attachments/Pasted image 20240511194026.png](_attachments/Pasted%20image%2020240511194026.png)
 
-Puis naviguez jusqu'à trouver l'image qui nous intéresse soit :
+Puis naviguez jusqu'à trouver l'image qui nous intéresse, à savoir :
 
 ![_attachments/Pasted image 20240511194257.png](_attachments/Pasted%20image%2020240511194257.png)
+ 
  Cliquez sur "Démarrer"
 
 Puis nous allons configurer notre machine :
 
-- Donner luis le nom que vous souhaitez et cliquer sur suivant
-- Nous avons déjà choisi l'image donc nous pouvons aussi cliquer sur suivant
-- Puis choisissez la taille du serveur. Pour être tranquille je vais opter pour :
+- Donnez-lui le nom que vous souhaitez et cliquez sur suivant.
+- Comme nous avons déjà choisi l'image, vous pouvez également cliquer sur suivant.
+- Ensuite, choisissez la taille du serveur. Pour être tranquille, je vais opter pour :
 
 ![_attachments/Pasted image 20240511194822.png](_attachments/Pasted%20image%2020240511194822.png)
 
-- Puis cliquez sur suivant
-- Puis cliquez sur ext-net1 pour que la machine est une IPv4 publique et cliquez sur suivant
-- Cliquez encore une fois sur suivant
-- Puis maintenant nous allons lui affecter le groupe de sécurité précédemment créer. Cliquez donc sur le groupe de sécurité précédemment créer et sure suivant
-- Puis nous allons aussi lui donner la clé ssh créer précédemment. Pour ce faire cliquez sur la clé précédemment créer
-C'est tout pour le paramétrage vous pouvez déjà cliquez sur lancé l'instance
+- - Cliquez ensuite sur suivant.
+- Ensuite, cliquez sur "ext-net1" pour que la machine ait une IPv4 publique, puis cliquez sur suivant.
+- Cliquez encore une fois sur suivant.
+- Maintenant, nous allons lui affecter le groupe de sécurité précédemment créé. Cliquez donc sur le groupe de sécurité précédemment créé, puis sur suivant.
+- Enfin, nous allons aussi lui donner la clé SSH créée précédemment. Pour ce faire, cliquez sur la clé précédemment créée.
+C'est tout pour le paramétrage. Vous pouvez maintenant cliquer sur "Lancer l'instance".
 
-### La machine serveur étant créer il faut maintenant si connecter
+### Maintenant que la machine serveur est créée, il est temps de s'y connecter.
 
-Il vas falloir trouver l'ip de la machine. Pour ce faire aller dans l'onglet instance et cliquer sur le nom de la machine que vous venez de créer :
+Il va falloir trouver l'IP de la machine. Pour ce faire, allez dans l'onglet "Instance" et cliquez sur le nom de la machine que vous venez de créer.
 
 ![_attachments/Pasted image 20240514193336.png](_attachments/Pasted%20image%2020240514193336.png)
 
-Vous trouverez l'ip ici : 
+Vous trouverez l'IP ici : 
 
 ![_attachments/Pasted image 20240514193500.png](_attachments/Pasted%20image%2020240514193500.png)
 
-Aller ensuit dans mobax sur l'onglet session :
+Ensuite, dans Mobax, rendez-vous dans l'onglet "Session" :
 
 ![_attachments/Pasted image 20240514193642.png](_attachments/Pasted%20image%2020240514193642.png)
 
-Aller ensuit dans ssh et remplissez les information suivant : 
+Ensuite, dans SSH, remplissez les informations suivantes :
 
 ![_attachments/Pasted image 20240514194008.png](_attachments/Pasted%20image%2020240514194008.png)
 
-- 1 : Mettez l'ip de la machine
-- 2 : Cliquer sur **Advanced SSH settings** 
-- Cliquer ensuit sur **Use private key** 
-- Puis cliquez sur la petite icon de fichier ce qui ouvrira l'explorateur et sélectionnez le fichier télécharger laure de la création de la paire de clé SSH (je vous avez bien dit de garder ce fichier précieusement ;) )
-- Pour finir cliquez sur ok
+- - 1 : Mettez l'IP de la machine.
+- 2 : Cliquez sur **Advanced SSH settings**.
+- Ensuite, cliquez sur **Use private key**.
+- Cliquez ensuite sur l'icône de fichier, ce qui ouvrira l'explorateur. Sélectionnez le fichier téléchargé lors de la création de la paire de clés SSH (je vous avais bien dit de garder ce fichier précieusement ;) ).
+- Pour finir, cliquez sur OK.
 
-Sur l'écran suivant cliquez sur accepter :
+Sur l'écran suivant, cliquez sur "Accepter".
 
 ![_attachments/Pasted image 20240514194650.png](_attachments/Pasted%20image%2020240514194650.png)
 
-Quand on vous demanderas de vous connecter avec un utilisateur écrivez ubuntu :
+Quand on vous demandera de vous connecter avec un utilisateur, écrivez "ubuntu".
 
 ![_attachments/Pasted image 20240514194810.png](_attachments/Pasted%20image%2020240514194810.png)
 
-Cliquez sur enter
+Cliquez sur "Enter".
 
-Et voilà vous êtes connecté au serveur mais pour finir il faut 
-### changer les mots de passe
+Et voilà, vous êtes connecté au serveur ! Pour finir, il faut... 
+### Changer les mots de passe
 
-exécuter les commandes suivant dans le terminal 
+Exécutez les commandes suivantes dans le terminal :
 
 ```bash
 sudo su
@@ -245,32 +250,32 @@ sudo su
 passwd
 ```
  
-pour mettre un mot de passe a l'utilisateur root
+Pour mettre un mot de passe à l'utilisateur root :
 
-saisirez 2 fois le mot de passe de votre choit (sécurité avant tout)
+Saisissez deux fois le mot de passe de votre choix (sécurité avant tout).
 
 
 ```bash
 passwd -d ubuntu
 ```
 
-pour supprimer le mot de passe de l'utilisateur Ubuntu
+Pour supprimer le mot de passe de l'utilisateur Ubuntu :
 
 ```bash
 exit
 ```
 
-pour revenir a l'utilisateur Ubuntu
+Pour revenir à l'utilisateur Ubuntu 
 
 ```bash
 passwd
 ```
 
-pour mettre un mot de passe a l'utilisateur Ubuntu
+Pour mettre un mot de passe à l'utilisateur Ubuntu
 
-saisirez 2 fois le mot de passe de votre choit (sécurité avant tout)
+Saisissez deux fois le mot de passe de votre choix (sécurité avant tout).
 
-Et voilà la machine est prête pour l'installation du serveur Mattermost
+Et voilà, la machine est prête pour l'installation du serveur Mattermost !
 
 # Installation du Serveur Mattermost
 doc : https://docs.mattermost.com/install/install-ubuntu.html
