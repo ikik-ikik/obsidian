@@ -196,7 +196,7 @@ Puis nous allons configurer notre machine :
 
 ![_attachments/Pasted image 20240511194822.png](_attachments/Pasted%20image%2020240511194822.png)
 
-- - Cliquez ensuite sur suivant.
+- Cliquez ensuite sur suivant.
 - Ensuite, cliquez sur "ext-net1" pour que la machine ait une IPv4 publique, puis cliquez sur suivant.
 - Cliquez encore une fois sur suivant.
 - Maintenant, nous allons lui affecter le groupe de sécurité précédemment créé. Cliquez donc sur le groupe de sécurité précédemment créé, puis sur suivant.
@@ -221,11 +221,11 @@ Ensuite, dans SSH, remplissez les informations suivantes :
 
 ![_attachments/Pasted image 20240514194008.png](_attachments/Pasted%20image%2020240514194008.png)
 
-- - 1 : Mettez l'IP de la machine.
-- 2 : Cliquez sur **Advanced SSH settings**.
-- Ensuite, cliquez sur **Use private key**.
-- Cliquez ensuite sur l'icône de fichier, ce qui ouvrira l'explorateur. Sélectionnez le fichier téléchargé lors de la création de la paire de clés SSH (je vous avais bien dit de garder ce fichier précieusement ;) ).
-- Pour finir, cliquez sur OK.
+1.  Mettez l'IP de la machine.
+2. Cliquez sur **Advanced SSH settings**.
+3. Ensuite, cliquez sur **Use private key**.
+4. Cliquez ensuite sur l'icône de fichier, ce qui ouvrira l'explorateur. Sélectionnez le fichier téléchargé lors de la création de la paire de clés SSH (je vous avais bien dit de garder ce fichier précieusement ;) ).
+5. Pour finir, cliquez sur OK.
 
 Sur l'écran suivant, cliquez sur "Accepter".
 
@@ -282,7 +282,7 @@ doc : https://docs.mattermost.com/install/install-ubuntu.html
 
 ### Ajouter le référentiel PPA du serveur Mattermost
 
-Fait les commande suivant :
+Exécutez les commandes suivantes :
 ```bash
 sudo rm /usr/share/keyrings/mattermost-archive-keyring.gpg
 ```
@@ -406,9 +406,9 @@ sudo nano /etc/postgresql/14/main/pg_hba.conf
 
 ![_attachments/Pasted image 20240516194936.png](_attachments/Pasted%20image%2020240516194936.png)
 
-Et voila la base de données est configuré
+Et voilà, la base de données est configurée.
 
-maintenant il faut démarrer PostgreSQL : 
+Maintenant, il faut démarrer PostgreSQL :
 
 ```bash
 sudo systemctl restart postgresql
@@ -417,67 +417,70 @@ sudo systemctl restart postgresql
 ### Mis en place du nom de domaine (certificat TLS)
 doc : https://forum.mattermost.com/t/mattermost-recipe-using-lets-encrypt-for-tls-certificates-with-mattermost-docker/7596
 
-nous allons commencer a aller sur notre compte infomaniak : https://login.infomaniak.com/
+Nous partons du principe que le nom de domaine que vous souhaitez utiliser se trouve chez Infomaniak.
+  
+Nous allons commencer par nous rendre sur notre compte Infomaniak : [https://login.infomaniak.com/](https://login.infomaniak.com/).
 
-Puis aller sous la rubrique domaine :
+Puis allez sous la rubrique "Domaine".
 
 ![_attachments/Pasted image 20240519121030.png](_attachments/Pasted%20image%2020240519121030.png)
 
-si le domaine ne vous appartiens pas mais qu'on vous a donner le droit dessus il ne faut pas oublier de changer votre statue en haut a gauche :
+  
+Si le domaine ne vous appartient pas mais que vous avez reçu les droits dessus, n'oubliez pas de changer votre statut en haut à gauche.
 
 ![_attachments/Pasted image 20240519121355.png](_attachments/Pasted%20image%2020240519121355.png)
 
-Dans cet exemple si je doit utiliser un domaine qui appartiens a Mateo Cerda mais qu'il ma donner les droit dessus il faut que je cliquer sur son nom. (il apparaitra automatiquement si la personne vous a donner des droit sur quelque chose qui lui appartient) Puis aller sur la rubrique domaine.
+Dans cet exemple, si je dois utiliser un domaine qui appartient à Mateo Cerda mais qu'il m'a donné les droits dessus, il faut que je clique sur son nom. (Il apparaîtra automatiquement si la personne vous a donné des droits sur quelque chose qui lui appartient). Ensuite, je vais dans la rubrique "Domaine".
 
-Ensuite cliquer sur le domaine que vous voulez utiliser :
+Ensuite, cliquez sur le domaine que vous voulez utiliser.
 
 ![_attachments/Pasted image 20240519121809.png](_attachments/Pasted%20image%2020240519121809.png)
 
-Puis descendez jusqu'à trouver la rubrique action et cliquer sur l'élément suivant :
+Puis descendez jusqu'à trouver la rubrique "Actions" et cliquez sur l'élément suivant :
 
 ![_attachments/Pasted image 20240519122019.png](_attachments/Pasted%20image%2020240519122019.png)
 
-Cliquer ensuit sur "Ajouter un enregistrement" :
+Ensuite, cliquez sur "Ajouter un enregistrement".
 
 ![_attachments/Pasted image 20240519122231.png](_attachments/Pasted%20image%2020240519122231.png)
 
-Puis choisissez un enregistrement de type A
-
-Ensuit renseigner le champs suivant avec les bonne information :
+Ensuite, choisissez un enregistrement de type A.
+ 
+Ensuite, renseignez le champ suivant avec les bonnes informations :
 
 ![_attachments/Pasted image 20240519122845.png](_attachments/Pasted%20image%2020240519122845.png)
 
-1. Mettez ce que vous voulez dans le champs "Hôte" celui-ci corresponds a l'url que voulez taper pour aller sur la page de votre Mattermost  
-2. Dans le champs Valeur il faut mettre l'ip de votre machin (la même que vous utilisez pour vous connecter en SSH sur mobax ;) ) 
-3.  C'est fini vous pouvez cliquez sur "Enregistrer"
+1. Mettez ce que vous voulez dans le champ "Hôte", celui-ci correspond à l'URL que vous voulez taper pour accéder à la page de votre Mattermost.
+2. Dans le champ "Valeur", mettez l'IP de votre machine (la même que vous utilisez pour vous connecter en SSH sur Mobax).
+3. C'est fini ! Vous pouvez cliquer sur "Enregistrer".
 
-Maintenant on vas installer le certificat sur notre machine. Pour ce faire allez sur votre machine .
+Maintenant, nous allons installer le certificat sur notre machine. Pour ce faire, allez sur votre machine.
 
-Nous allons d'abord installer le certbot sur la machine (c'est lui qui vas nous installer le certificat)
+Nous allons d'abord installer Certbot sur la machine. C'est lui qui va nous permettre d'installer le certificat.
 
 ```bash
 sudo apt-get install certbot
 ```
 
-Ensuit nous allons faire la commande suivant pour installer le certificat
+Ensuite, nous allons exécuter la commande suivante pour installer le certificat.
 
 ```bash
 sudo certbot certonly --standalone -d mattermost.example.com
 ```
 
-A la place de "mattermost.example.com" il faut mettre "Hôte" que vous avez renseignez dans infomaniak. Dans mon cas "mattermost.yttrium-band.com"
+À la place de "mattermost.example.com", vous devez mettre le "Hôte" que vous avez renseigné dans Infomaniak. Dans votre cas, ce serait "mattermost.yttrium-band.com".
 
 ![_attachments/Pasted image 20240519125049.png](_attachments/Pasted%20image%2020240519125049.png)
 
-A cet étape il faut juste mettre votre adresse email
+À cette étape, il vous suffit juste de mettre votre adresse e-mail.
 
-Puis faite Y a tous
+Ensuite, appuyez sur Y pour confirmer tous les choix.
 
 ![_attachments/Pasted image 20240519125155.png](_attachments/Pasted%20image%2020240519125155.png)
 
 ![_attachments/Pasted image 20240519125205.png](_attachments/Pasted%20image%2020240519125205.png)
 
-Et voila le certificat6 est installer sur la machine il ne reste plus cas set up le fichier de conf de Mattermost pour le démarrer 
+Et voilà, le certificat est installé sur la machine. Il ne reste plus qu'à configurer le fichier de configuration de Mattermost pour le démarrer.
 ### Installation
 doc : https://docs.mattermost.com/install/install-ubuntu.html#setup
 
@@ -489,7 +492,7 @@ Renommez ce fichier de configuration avec les autorisations correctes :
 sudo install -C -m 600 -o mattermost -g mattermost /opt/mattermost/config/config.defaults.json /opt/mattermost/config/config.json
 ```
 
-et nous allons commencer a configurer ce qu'il faut dans le fichier de config. Pour ce faire :
+Nous allons commencer à configurer ce qu'il faut dans le fichier de configuration. Pour ce faire :
 
 ```bash
 sudo nano /opt/mattermost/config/config.json
@@ -497,19 +500,19 @@ sudo nano /opt/mattermost/config/config.json
 
 ![_attachments/Pasted image 20240519131558.png](_attachments/Pasted%20image%2020240519131558.png)
 
-1. Mettez le "Hôte" que vous avez mis dans infomaniak avec "https://" devant
-2. Mettez mattermost sur le port 443 pour avec d https (pas  besoin d'ouvrir le car nous l'avons déjà fait avec le groupe de sécurité)
-3. La il faut mettre le type de certificat utiliser. Avec le certbot c'est un certificat TLS
-4. Grace a ce champs que nous avons mis a true mattermost vas aller chercher le certificat TLS automatiquement 
-5. Le bute de champs est de faire en sorte que toute le requête http soit rediriger en https
+1. Mettez le "Hôte" que vous avez mis dans Infomaniak avec "https://" devant.
+2. Mettez Mattermost sur le port 443 pour utiliser HTTPS (pas besoin d'ouvrir le pare-feu car nous l'avons déjà fait avec le groupe de sécurité).
+3. Ici, mettez le type de certificat utilisé. Avec Certbot, c'est un certificat TLS.
+4. Grâce à ce champ mis à true, Mattermost va automatiquement chercher le certificat TLS.
+5. Le but de ce champ est de faire en sorte que toutes les requêtes HTTP soient redirigées en HTTPS.
 
-Il ne reste plus que la connexion a la base de donnés :
+Il ne reste plus que la connexion à la base de données :
 
 ![_attachments/Pasted image 20240519132551.png](_attachments/Pasted%20image%2020240519132551.png)
 
-Vous pouvez maintenant fait contrôle x pour quitter en Y pour enregistrer
+Vous pouvez maintenant appuyer sur "Ctrl + X" pour quitter et sur "Y" pour enregistrer.
 
-Et lancer les commandes suivante pour permettre a mattermost de ce lancer sur le port 443 :
+Et lancez les commandes suivantes pour permettre à Mattermost de se lancer sur le port 443 :
 
 ```bash
 cd /opt
@@ -519,8 +522,22 @@ cd /opt
 sudo setcap cap_net_bind_service=+ep ./mattermost/bin/mattermost
 ```
 
-Puis nous allons lancer le service Mattermost :
+Ensuite, nous allons lancer le service Mattermost :
 
 ```bash
 sudo systemctl start mattermost
 ```
+
+Faites la commande suivante pour que le service Mattermost se lance à chaque démarrage de la machine :
+
+```bash
+sudo systemctl enable mattermost.service
+```
+
+Il ne vous reste plus qu'à taper l'URL que vous avez configurée pour accéder à la page de Mattermost. Pour ma part, c'est mattermost.yttrium-band.com.
+
+Cliquez sur "Continuer dans le navigateur".
+
+Créez-vous un compte local et suivez les instructions de configuration.
+
+# Et bienvenue dans Mattermost !

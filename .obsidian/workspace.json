@@ -65,7 +65,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -148,6 +149,7 @@
   },
   "active": "faac6a9dee13b8d6",
   "lastOpenFiles": [
+    "Mattermost_openstack_infomaniak/Créer un mattermost avec openstack infomaniak disponible sur internet.md",
     "Mattermost_openstack_infomaniak/_attachments/Pasted image 20240519132551.png",
     "Mattermost_openstack_infomaniak/_attachments/Pasted image 20240519131558.png",
     "Mattermost_openstack_infomaniak/_attachments/Pasted image 20240519125205.png",
@@ -158,8 +160,6 @@
     "Mattermost_openstack_infomaniak/_attachments/Pasted image 20240519122019.png",
     "Mattermost_openstack_infomaniak/_attachments/Pasted image 20240519121809.png",
     "Mattermost_openstack_infomaniak/_attachments/Pasted image 20240519121355.png",
-    "Mattermost_openstack_infomaniak/_attachments/Pasted image 20240519121030.png",
-    "Mattermost_openstack_infomaniak/Créer un mattermost avec openstack infomaniak disponible sur internet.md",
     "Nouveau dossier",
     "Mattermost_openstack_infomaniak/_attachments",
     "Mattermost_openstack_infomaniak/Image",
