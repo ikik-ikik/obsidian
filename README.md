@@ -22,7 +22,7 @@ Ce dépôt contient des documents détaillant divers aspects de l'informatique. 
 
 Ce document vous guide à travers les étapes nécessaires pour configurer et déployer un serveur Mattermost sur une infrastructure OpenStack. Il couvre les prérequis, l'installation, la configuration et quelques astuces pour optimiser votre déploiement.
 
-- [Mise en place d'un serveur Mattermost dans OpenStack](https://github.com/ikik-ikik/obsidian/tree/main/Mattermost_openstack_infomaniak)
+- [Mise en place d'un serveur Mattermost dans OpenStack](https://github.com/ikik-ikik/obsidian/blob/main/Mattermost_openstack_infomaniak/Cr%C3%A9er%20un%20mattermost%20avec%20openstack%20infomaniak%20disponible%20sur%20internet.md)
 
 ## 📂 Structure du dépôt
 
