@@ -1,6 +1,6 @@
-# 📚 Documentation Informatique Publique
+# 📚 Documentations Informatique Publique
 
-Bienvenue dans le dépôt de documentation informatique publique ! Ce dépôt contient des guides et des ressources que j'ai créés pour partager mes connaissances en informatique.
+Bienvenue dans le dépôt de mes documentations informatique publique ! Ce dépôt contient des guides et des ressources que j'ai créés pour partager mes connaissances en informatique.
 
 ## 📑 Table des matières
 
