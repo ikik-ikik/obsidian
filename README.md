@@ -29,7 +29,7 @@ Ce document vous guide à travers les étapes nécessaires pour configurer et d�
 Le dépôt est structuré pour faciliter la navigation :
 
 ```
-docs
+obsidian
 └── mattermost_openstack.md
 ```
 
