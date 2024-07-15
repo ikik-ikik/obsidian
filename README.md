@@ -30,11 +30,12 @@ Le dépôt est structuré pour faciliter la navigation :
 
 ```
 obsidian
-└── mattermost_openstack.md
+└── Mattermost_openstack_infomaniak
+    └──Créer un mattermost avec openstack infomaniak disponible sur internet.md
 ```
 
 
-- **/docs** : Ce répertoire contient le document principal pour la mise en place de Mattermost.
+- **/Mattermost_openstack_infomaniak** : Ce répertoire contient le document principal pour la mise en place de Mattermost.
 
 ## 🤝 Contribuer
 
