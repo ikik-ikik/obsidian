@@ -430,7 +430,7 @@ Si le domaine ne vous appartient pas mais que vous avez reçu les droits dessus,
 
 ![_attachments/Pasted image 20240519121355.png](_attachments/Pasted%20image%2020240519121355.png)
 
-Dans cet exemple, si je dois utiliser un domaine qui appartient à Mateo Cerda mais qu'il m'a donné les droits dessus, il faut que je clique sur son nom. (Il apparaîtra automatiquement si la personne vous a donné des droits sur quelque chose qui lui appartient). Ensuite, je vais dans la rubrique "Domaine".
+Dans cet exemple, si je dois utiliser un domaine qui appartient à Mateo Cerda et qu'il m'a donné les droits dessus, il faut que je clique sur son nom. (Il apparaîtra automatiquement si la personne vous a donné des droits sur quelque chose qui lui appartient). Ensuite, je vais dans la rubrique "Domaine".
 
 Ensuite, cliquez sur le domaine que vous voulez utiliser.
 
@@ -468,7 +468,7 @@ Ensuite, nous allons exécuter la commande suivante pour installer le certificat
 sudo certbot certonly --standalone -d mattermost.example.com
 ```
 
-À la place de "mattermost.example.com", vous devez mettre le "Hôte" que vous avez renseigné dans Infomaniak. Dans votre cas, ce serait "mattermost.yttrium-band.com".
+À la place de "mattermost.example.com", vous devez mettre le "Hôte" que vous avez renseigné dans Infomaniak. Dans mon cas, ce serait "mattermost.yttrium-band.com".
 
 ![_attachments/Pasted image 20240519125049.png](_attachments/Pasted%20image%2020240519125049.png)
 
